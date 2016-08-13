@@ -1,30 +1,20 @@
 package com.teng.androidfactory.api;
 
-import android.util.Log;
-
-import com.teng.androidfactory.Service.MenuService;
-import com.teng.androidfactory.model.HttpResult;
-import com.teng.androidfactory.model.MenuModel;
-
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import rx.Observable;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 
 /**
  * Created by teng on 16/8/11.
  */
-public  class ApiServer {
+public final class ApiServer {
 
     private static final int DEFAULT_TIMEOUT = 5;
 
