@@ -1,3 +1,3 @@
 # AndroidFactory
-retrofit 和 rxjava 
+retrofit + rxjava + mvp + dragger
 
