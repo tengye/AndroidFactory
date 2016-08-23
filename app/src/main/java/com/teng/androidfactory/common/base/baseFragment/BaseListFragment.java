@@ -25,7 +25,7 @@ public abstract class BaseListFragment<T extends BasePresenter, K> extends
 
     protected RecycleViewAdapter<K> mAdapter;
 
-    protected Map<String, String> params;
+    protected Map<String, String> params = new HashMap<>();;
 
     protected int PAGE = 1;
 
@@ -36,7 +36,6 @@ public abstract class BaseListFragment<T extends BasePresenter, K> extends
 
     @Override
     protected void baseInit() {
-        params = new HashMap<>();
         showLoading();
         mPresenter.requestDate(getRequestParams(), BasePresenter.RequestMode.FRIST);
     }
@@ -48,8 +47,8 @@ public abstract class BaseListFragment<T extends BasePresenter, K> extends
 
     @Override
     protected Map<String, String> getRequestParams() {
-        params.put("mechanismId", "1");
-        params.put("pageNum", PAGE + "");
+//        params.put("mechanismId", "1");
+//        params.put("pageNum", PAGE + "");
         return params;
     }
 
