@@ -23,4 +23,8 @@ public class MainActivity extends AppCompatActivity {
     public void retrofitAndRx(View view) {
         startActivity(new Intent(getContext() , MenuActivity.class));
     }
+
+    public void exoPlayer(View view) {
+        startActivity(new Intent(getContext() , ExoPlayerActivity.class));
+    }
 }

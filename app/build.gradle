@@ -57,4 +57,11 @@ dependencies {
     apt 'com.google.dagger:dagger-compiler:2.0.2'
     compile 'com.google.dagger:dagger:2.0.2'
 
+    // 快速运行修改程序
+    compile 'com.github.mmin18.layoutcast:library:1.+@aar'
+
+    // exoPlayer
+    compile 'com.google.android.exoplayer:exoplayer:r1.5.10'
+
+
 }
