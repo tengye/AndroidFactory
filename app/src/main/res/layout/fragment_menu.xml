@@ -12,7 +12,8 @@
             android:id="@+id/edit_text"
             android:layout_width="match_parent"
             android:layout_weight="1"
-            android:layout_height="50dp" />
+            android:layout_height="50dp"
+            android:hint="输入一种"/>
 
         <Button
             android:id="@+id/find"

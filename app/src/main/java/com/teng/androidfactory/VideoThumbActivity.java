@@ -2,7 +2,6 @@ package com.teng.androidfactory;
 
 import android.graphics.Bitmap;
 import android.media.MediaMetadataRetriever;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.Nullable;
@@ -13,10 +12,11 @@ import android.widget.ProgressBar;
 import android.widget.SeekBar;
 import android.widget.VideoView;
 
-import java.io.File;
+import java.util.HashMap;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import butterknife.Unbinder;
 
 /**
@@ -33,8 +33,10 @@ public class VideoThumbActivity extends FragmentActivity {
     SeekBar seekBar;
     @BindView(R.id.progress)
     ProgressBar progressBar;
+
     private MediaMetadataRetriever metadataRetriever;
     private String uriString;
+    private boolean isNetVideo;
 
 
     @Override
@@ -43,41 +45,52 @@ public class VideoThumbActivity extends FragmentActivity {
         setContentView(R.layout.activity_video_thumb);
         bind = ButterKnife.bind(this);
 
-//        MediaController controller = new MediaController(this);
-//        videoView.setMediaController(controller);
-
         metadataRetriever = new MediaMetadataRetriever();
 
-        File externalStorageDirectory = Environment.getExternalStorageDirectory();
-        String absolutePath = externalStorageDirectory.getAbsolutePath();
-        uriString = absolutePath + "/V60907-111428.mp4";
+        isNetVideo = true;
 
-        //uriString = "android.resource://"+getPackageName()+"/"+R.raw.shuai_dan_ge;
+        initData();
 
-        File file = new File(uriString);
-
-        if (file.exists()) {
-
-            metadataRetriever.setDataSource(uriString);
-
-            String time = metadataRetriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION);
-            videoView.setVideoURI(Uri.parse("file:///"+ uriString));
-            videoView.start();
-
-            seekBar.setMax(Integer.parseInt(time) * 1000);
-            seekBar.setOnSeekBarChangeListener(new SeekBarListener());
-
-        }
 
     }
 
-    private boolean isContraling;
+    private void initData() {
 
-    class SeekBarListener implements SeekBar.OnSeekBarChangeListener{
+        thumbImage.setImageResource(R.mipmap.ic_launcher);
+
+        if (isNetVideo) {
+            uriString = "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4";
+        } else {
+            uriString = Environment.getExternalStorageDirectory().getAbsolutePath() + "/V60907-111428.mp4";
+        }
+
+        videoView.stopPlayback();
+        metadataRetriever.setDataSource(uriString, new HashMap<String, String>());
+        String time = metadataRetriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION);
+        videoView.setVideoPath(uriString);
+        videoView.start();
+        seekBar.setMax(Integer.parseInt(time) * 1000);
+        seekBar.setOnSeekBarChangeListener(new SeekBarListener());
+    }
+
+
+    @OnClick(R.id.sd_video)
+    public void sdVideo(View view){
+        isNetVideo = false;
+        initData();
+    }
+
+    @OnClick(R.id.net_video)
+    public void netVideo(View view){
+        isNetVideo = true;
+        initData();
+    }
+
+
+    class SeekBarListener implements SeekBar.OnSeekBarChangeListener {
 
         @Override
         public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-
 
 
         }
@@ -95,7 +108,6 @@ public class VideoThumbActivity extends FragmentActivity {
             progressBar.setVisibility(View.GONE);
         }
     }
-
 
 
     @Override
