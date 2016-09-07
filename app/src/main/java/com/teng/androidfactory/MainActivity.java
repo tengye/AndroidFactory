@@ -24,7 +24,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(getContext() , MenuActivity.class));
     }
 
-    public void exoPlayer(View view) {
-        startActivity(new Intent(getContext() , ExoPlayerActivity.class));
+
+    public void videoThumbnail(View view) {
+
+        startActivity(new Intent(getContext() , VideoThumbActivity.class));
+
     }
 }

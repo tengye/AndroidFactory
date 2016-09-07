@@ -16,11 +16,18 @@
             android:layout_height="wrap_content"
             android:text="retrofit And rxJava"/>
 
+        <!--<Button-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:onClick="exoPlayer"-->
+            <!--android:text="Google Player"-->
+            <!--android:layout_marginTop="5dp" />-->
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="exoPlayer"
-            android:text="Google Player"
+            android:onClick="videoThumbnail"
+            android:text="Video thumbNail"
             android:layout_marginTop="5dp" />
 
     </LinearLayout>
