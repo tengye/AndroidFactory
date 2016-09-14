@@ -30,4 +30,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(getContext() , VideoThumbActivity.class));
 
     }
+
+    public void drawableTest(View view) {
+
+        startActivity(new Intent(getContext() , DrawableTextActivity.class));
+
+    }
 }

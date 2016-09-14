@@ -1,6 +1,8 @@
 package com.teng.androidfactory;
 
 import android.graphics.Bitmap;
+import android.graphics.Rect;
+import android.graphics.drawable.BitmapDrawable;
 import android.media.MediaMetadataRetriever;
 import android.os.Bundle;
 import android.os.Environment;
@@ -110,6 +112,11 @@ public class VideoThumbActivity extends FragmentActivity {
             Bitmap bitmap = metadataRetriever.getFrameAtTime(seekBar.getProgress(),
                     MediaMetadataRetriever.OPTION_CLOSEST_SYNC);
             thumbImage.setImageBitmap(bitmap);
+
+            BitmapDrawable drawable = new BitmapDrawable(bitmap);
+            Rect bounds = seekBar.getThumb().getBounds();
+            drawable.setBounds(bounds);
+            seekBar.setThumb(drawable);
             progressBar.setVisibility(View.GONE);
         }
     }
