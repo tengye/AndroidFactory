@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:name=".AfApplication"
         android:theme="@style/AppTheme">
-        <activity android:name=".DrawableTextActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,7 +22,7 @@
         </activity>
         <activity android:name=".MenuActivity"></activity>
         <activity android:name="VideoThumbActivity"></activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".DrawableTextActivity"></activity>
     </application>
 
 </manifest>
