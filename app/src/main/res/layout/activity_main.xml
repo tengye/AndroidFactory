@@ -14,13 +14,14 @@
             android:onClick="retrofitAndRx"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="retrofit And rxJava"/>
+            android:text="Retrofit And RxJava"
+            android:textAllCaps="false"/>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="videoThumbnail"
-            android:text="Video thumbNail"
+            android:text="视屏截图"
             android:layout_marginTop="5dp" />
 
 
@@ -29,7 +30,16 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:onClick="drawableTest"
-            android:text="Drawable Test" />
+            android:text="图片自由拖动" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:onClick="recyclerItemDrag"
+            android:textAllCaps="false"
+            android:text="List拖拽换位置" />
+
 
     </LinearLayout>
 

@@ -2,12 +2,16 @@ package com.teng.androidfactory;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.SeekBar;
+import android.widget.TextView;
+
+import com.teng.androidfactory.common.util.WindowUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -69,7 +73,7 @@ public class DrawableTextActivity extends FragmentActivity implements View.OnTou
         final int Y = (int) event.getRawY();
         switch (event.getAction() & MotionEvent.ACTION_MASK) {
             case MotionEvent.ACTION_DOWN:
-                LinearLayout.LayoutParams lParams = (LinearLayout.LayoutParams) imageView
+                RelativeLayout.LayoutParams lParams = (RelativeLayout.LayoutParams) imageView
                         .getLayoutParams();
                 _xDelta = X - lParams.leftMargin;
                 _yDelta = Y - lParams.topMargin;
@@ -81,7 +85,7 @@ public class DrawableTextActivity extends FragmentActivity implements View.OnTou
             case MotionEvent.ACTION_POINTER_UP:
                 break;
             case MotionEvent.ACTION_MOVE:
-                LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) imageView
+                RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) imageView
                         .getLayoutParams();
                 layoutParams.leftMargin = X - _xDelta;
                 layoutParams.topMargin = Y - _yDelta;
@@ -93,4 +97,57 @@ public class DrawableTextActivity extends FragmentActivity implements View.OnTou
         root.invalidate();
         return true;
     }
+
+    public void addText(View view) {
+
+        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(WindowUtils.dip2px(this , 50) , WindowUtils.dip2px(this , 50));
+        TextView textView = new TextView(this);
+        textView.setText(9+"");
+        textView.setGravity(Gravity.CENTER);
+        textView.setBackgroundResource(R.color.toolBar_color);
+        textView.setTextColor(getResources().getColor(R.color.white_color));
+        params.leftMargin = 0;
+        params.rightMargin = 0;
+        params.topMargin = 0;
+        params.bottomMargin = 0;
+        textView.setLayoutParams(params);
+        textView.setOnTouchListener(new CaptionTimeDrag());
+        root.addView(textView);
+
+    }
+
+
+    class CaptionTimeDrag implements View.OnTouchListener{
+
+
+        @Override
+        public boolean onTouch(View v, MotionEvent event) {
+            final int X = (int) event.getRawX();
+            switch (event.getAction()) {
+                case MotionEvent.ACTION_DOWN:
+                    RelativeLayout.LayoutParams lParams = (RelativeLayout.LayoutParams) v
+                            .getLayoutParams();
+                    _xDelta = X - lParams.leftMargin;
+                    break;
+                case MotionEvent.ACTION_UP:
+                    break;
+                case MotionEvent.ACTION_POINTER_DOWN:
+                    break;
+                case MotionEvent.ACTION_POINTER_UP:
+                    break;
+                case MotionEvent.ACTION_MOVE:
+                    RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) v
+                            .getLayoutParams();
+                    layoutParams.leftMargin = X - _xDelta;
+                    layoutParams.rightMargin = 0;
+                    v.setLayoutParams(layoutParams);
+                    break;
+            }
+            root.invalidate();
+            return true;
+
+        }
+    }
+
+
 }

@@ -36,4 +36,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(getContext() , DrawableTextActivity.class));
 
     }
+
+    public void recyclerItemDrag(View view) {
+        startActivity(new Intent(getContext() , DragItemActivity.class));
+    }
 }
