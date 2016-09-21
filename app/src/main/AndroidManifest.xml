@@ -24,6 +24,7 @@
         <activity android:name="VideoThumbActivity"></activity>
         <activity android:name=".DrawableTextActivity"></activity>
         <activity android:name=".DragItemActivity"></activity>
+        <activity android:name=".DownLoadVideoActivity"></activity>
     </application>
 
 </manifest>

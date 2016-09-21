@@ -24,7 +24,7 @@ import butterknife.Unbinder;
 /**
  * Created by teng on 16/9/7.
  *
- * 1、MediaMetadataRetriever可以获取任意时刻的缩略图
+ * 1、MediaMetadataRetriever可以获取任意时刻的缩略图,注意第一个参数是微秒
  *
  * 2、ThumbnailUtils好像只能获取第一帧
  *

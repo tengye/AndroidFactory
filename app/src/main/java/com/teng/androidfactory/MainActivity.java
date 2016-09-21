@@ -40,4 +40,8 @@ public class MainActivity extends AppCompatActivity {
     public void recyclerItemDrag(View view) {
         startActivity(new Intent(getContext() , DragItemActivity.class));
     }
+
+    public void downLoadVideo(View view) {
+        startActivity(new Intent(getContext() , DownLoadVideoActivity.class));
+    }
 }

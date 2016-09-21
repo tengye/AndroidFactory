@@ -40,6 +40,14 @@
             android:textAllCaps="false"
             android:text="List拖拽换位置" />
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:onClick="downLoadVideo"
+            android:textAllCaps="false"
+            android:text="下载视频到本地" />
+
 
     </LinearLayout>
 
