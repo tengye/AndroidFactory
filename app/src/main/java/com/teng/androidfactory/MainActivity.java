@@ -44,4 +44,8 @@ public class MainActivity extends AppCompatActivity {
     public void downLoadVideo(View view) {
         startActivity(new Intent(getContext() , DownLoadVideoActivity.class));
     }
+
+    public void exoPlayerEvent(View view) {
+        startActivity(new Intent(getContext() , SampleChooserActivity.class));
+    }
 }

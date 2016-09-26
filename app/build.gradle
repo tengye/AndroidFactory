@@ -61,7 +61,7 @@ dependencies {
     compile 'com.github.mmin18.layoutcast:library:1.+@aar'
 
     // exoPlayer
-    compile 'com.google.android.exoplayer:exoplayer:r1.5.10'
+    compile 'com.google.android.exoplayer:exoplayer:r2.0.0'
 
 
 }

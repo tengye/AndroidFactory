@@ -36,9 +36,13 @@ public class DownLoadVideoActivity extends FragmentActivity {
         setContentView(R.layout.activity_download_video);
         ButterKnife.bind(this);
 
-        editText.setText("http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4");
+//        editText.setText("http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4");
+        editText.setText("http://media-dev.musely.com/u/55c834e0-5a68-4c8b-aa1e-59cfc2cb0ec7.mp4");
     }
 
+//    /storage/emulated/0/Chaji/Video/1474514680413.mp4
+//    /storage/emulated/0/Chaji/Video/1474515738128.mp4
+//    /storage/emulated/0/Chaji/Video/1474516315738.mp4
     @OnClick(R.id.download)
     public void downloadVideoEvent(View view) {
 
@@ -82,7 +86,9 @@ public class DownLoadVideoActivity extends FragmentActivity {
                 e.printStackTrace();
             } finally {
                 try {
-                    output.close();
+                    if (output != null) {
+                        output.close();
+                    }
                     Log.e("download", "success");
                 } catch (IOException e) {
                     Log.e("download", "fail");

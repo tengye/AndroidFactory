@@ -48,6 +48,13 @@
             android:textAllCaps="false"
             android:text="下载视频到本地" />
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:onClick="exoPlayerEvent"
+            android:textAllCaps="false"
+            android:text="ExoPlayer" />
 
     </LinearLayout>
 
