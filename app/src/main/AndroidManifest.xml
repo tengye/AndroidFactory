@@ -62,6 +62,10 @@
             <!--</intent-filter>-->
         </activity>
 
+        <activity android:name=".FadingActionBarActivity"
+            android:theme="@style/AppThemeActionBar.TranslucentActionBar">
+            </activity>
+
     </application>
 
 </manifest>

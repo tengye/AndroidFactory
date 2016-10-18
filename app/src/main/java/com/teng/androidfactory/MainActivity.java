@@ -48,4 +48,8 @@ public class MainActivity extends AppCompatActivity {
     public void exoPlayerEvent(View view) {
         startActivity(new Intent(getContext() , SampleChooserActivity.class));
     }
+
+    public void fadingActionBarEvent(View view) {
+        startActivity(new Intent(getContext() , FadingActionBarActivity.class));
+    }
 }

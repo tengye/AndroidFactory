@@ -56,6 +56,14 @@
             android:textAllCaps="false"
             android:text="ExoPlayer" />
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:onClick="fadingActionBarEvent"
+            android:textAllCaps="false"
+            android:text="滚动悬浮透明度渐变ActionBar" />
+
     </LinearLayout>
 
 </ScrollView>

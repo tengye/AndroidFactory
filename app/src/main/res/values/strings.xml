@@ -8,6 +8,9 @@
     <string name="refreshing">正在刷新</string>
     <string name="refresh_done">刷新成功</string>
     <string name="listview_header_last_time">last update：</string>
+    <string name="action_change_dataset">Change dataset</string>
+    <string name="action_settings">Settings</string>
+
 
 
 

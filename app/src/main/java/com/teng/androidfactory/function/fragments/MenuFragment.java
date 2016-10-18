@@ -51,6 +51,7 @@ public class MenuFragment extends BaseListFragment<MenuPresenter, MenuModel.Menu
             PAGE = 0;
             getRequestParams(s);
             mPresenter.requestDate(getRequestParams(), BasePresenter.RequestMode.REFRESH);
+
         }
 
     }
