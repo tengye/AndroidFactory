@@ -14,7 +14,7 @@
             android:onClick="retrofitAndRx"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Retrofit And RxJava"
+            android:text="Retrofit 、 RxJava 、MVP框架"
             android:textAllCaps="false"/>
 
         <Button
@@ -54,7 +54,7 @@
             android:layout_marginTop="5dp"
             android:onClick="exoPlayerEvent"
             android:textAllCaps="false"
-            android:text="ExoPlayer" />
+            android:text="谷歌 ExoPlayer" />
 
         <Button
             android:layout_width="match_parent"
@@ -63,6 +63,14 @@
             android:onClick="fadingActionBarEvent"
             android:textAllCaps="false"
             android:text="滚动悬浮透明度渐变ActionBar" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:onClick="hotFixEvent"
+            android:textAllCaps="false"
+            android:text="热修复" />
 
     </LinearLayout>
 

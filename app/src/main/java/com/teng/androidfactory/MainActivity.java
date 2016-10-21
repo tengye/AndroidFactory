@@ -52,4 +52,8 @@ public class MainActivity extends AppCompatActivity {
     public void fadingActionBarEvent(View view) {
         startActivity(new Intent(getContext() , FadingActionBarActivity.class));
     }
+
+    public void hotFixEvent(View view) {
+        startActivity(new Intent(getContext() , HotFixActivity.class));
+    }
 }

@@ -66,6 +66,8 @@
             android:theme="@style/AppThemeActionBar.TranslucentActionBar">
             </activity>
 
+        <activity android:name=".HotFixActivity"/>
+
     </application>
 
 </manifest>
