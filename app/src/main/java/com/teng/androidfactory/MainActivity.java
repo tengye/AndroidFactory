@@ -56,4 +56,8 @@ public class MainActivity extends AppCompatActivity {
     public void hotFixEvent(View view) {
         startActivity(new Intent(getContext() , HotFixActivity.class));
     }
+
+    public void richEditorEvent(View view) {
+        startActivity(new Intent(getContext() , RichEditorActivity.class));
+    }
 }

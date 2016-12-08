@@ -72,6 +72,14 @@
             android:textAllCaps="false"
             android:text="热修复" />
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:onClick="richEditorEvent"
+            android:textAllCaps="false"
+            android:text="富文本编辑（RichEditor）" />
+
     </LinearLayout>
 
 </ScrollView>

@@ -66,5 +66,7 @@ dependencies {
     // FadingActionBar
     compile 'com.github.manuelpeinado.fadingactionbar:fadingactionbar:3.1.2'
 
+    // richEditor
+    //compile 'jp.wasabeef:richeditor-android:1.2.1'
 
 }
