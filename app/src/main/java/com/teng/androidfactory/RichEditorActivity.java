@@ -12,6 +12,13 @@ import java.util.List;
 
 /**
  * Created by teng on 16/11/29.
+ *
+ * 参考文档：
+ * https://developer.mozilla.org/zh-CN/docs/Web/API/Document/execCommand
+ *
+ * github地址：
+ * https://github.com/wasabeef/richeditor-android
+ *
  */
 public class RichEditorActivity extends Activity {
 
