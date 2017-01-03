@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.teng.androidfactory.function.richText.RichEditor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,10 +21,10 @@ import java.util.List;
  * https://github.com/wasabeef/richeditor-android
  *
  */
-public class RichEditorActivity extends Activity {
+public class RichEditorActivity extends Activity implements View.OnClickListener {
 
     private RichEditor mEditor;
-    private TextView mPreview;
+    private TextView mPreview , maxLine;
     boolean change = false;
     int currentSize = 0;
     int oldSize = 0;
@@ -33,15 +34,17 @@ public class RichEditorActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_rich_editor);
+
         mEditor = (RichEditor) findViewById(R.id.editor);
-        //mEditor.setEditorBackgroundColor(Color.BLUE);
-        //mEditor.setBackgroundColor(Color.BLUE);
-        //mEditor.setBackgroundResource(R.drawable.bg);
-//    mEditor.setPadding(10, 10, 10, 10);
+        mEditor.setEditorBackgroundColor(Color.BLUE);
+        mEditor.setBackgroundColor(Color.BLUE);
+        mEditor.setBackgroundResource(R.drawable.bg);
+    mEditor.setPadding(10, 10, 10, 10);
         //    mEditor.setBackground("https://raw.githubusercontent.com/wasabeef/art/master/chip.jpg");
-        //mEditor.setPlaceholder("Insert text here...");
+        mEditor.setPlaceholder("Insert text here...");
 
         mPreview = (TextView) findViewById(R.id.preview);
+        maxLine = (TextView) findViewById(R.id.maxLine);
 
         mEditor.setOnTextChangeListener(new RichEditor.OnTextChangeListener() {
             @Override
@@ -55,6 +58,8 @@ public class RichEditorActivity extends Activity {
 
             }
         });
+
+        mEditor.setOnClickListener(this);
 
         mEditor.setOnDecorationChangeListener(new RichEditor.OnDecorationStateListener() {
             @Override
@@ -251,5 +256,23 @@ public class RichEditorActivity extends Activity {
     protected void onResume() {
         super.onResume();
 
+
+        ArrayList<String> list = new ArrayList<>();
+        int i = 0;
+        boolean abdcd = false;
+
+
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch(v.getId()){
+            case R.id.action_align_center:
+
+            break;
+            default:
+            break;
+
+        }
     }
 }
