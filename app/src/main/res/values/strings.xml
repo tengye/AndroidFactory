@@ -1,5 +1,5 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_name">AndroidFactory</string>
+    <string name="app_name">Android工厂</string>
 
     <string name="listview_header_hint_normal">下拉刷新</string>
     <string name="listview_header_hint_release">释放立即刷新</string>
@@ -41,5 +41,22 @@
     <string name="error_unsupported_video">Media includes video tracks, but none are playable by this device</string>
     <string name="error_unsupported_audio">Media includes audio tracks, but none are playable by this device</string>
     <string name="sample_list_load_error">One or more sample lists failed to load</string>
+
+    <!--bottom NavigationBar-->
+
+    <string name="home">Home</string>
+    <string name="info">Info</string>
+    <string name="mine">Mine</string>
+    <string name="cart">Cart</string>
+    <string name="mode_fixed">MODE_FIXED</string>
+    <string name="mode_shifting">MODE_SHIFTING</string>
+    <string name="bs_static">BS_STATIC</string>
+    <string name="bs_ripple">BS_RIPPLE</string>
+    <string name="_3_items">3 items</string>
+    <string name="_4_items">4 items</string>
+    <string name="_5_items">5 items</string>
+    <string name="auto_hide_badge">Auto hide badge</string>
+    <string name="toggle_hide">Toggle Hide</string>
+    <string name="toggle_badge">Toggle Badge</string>
 
 </resources>

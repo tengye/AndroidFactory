@@ -80,6 +80,15 @@
             android:textAllCaps="false"
             android:text="富文本编辑（RichEditor）" />
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:onClick="bottomNavigationBarEvent"
+            android:textAllCaps="false"
+            android:text="BottomNavigationBar" />
+
+
     </LinearLayout>
 
 </ScrollView>

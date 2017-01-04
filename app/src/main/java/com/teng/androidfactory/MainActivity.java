@@ -60,4 +60,8 @@ public class MainActivity extends AppCompatActivity {
     public void richEditorEvent(View view) {
         startActivity(new Intent(getContext() , RichEditorActivity.class));
     }
+
+    public void bottomNavigationBarEvent(View view) {
+        startActivity(new Intent(getContext() , BottomNavigationBarActivity.class));
+    }
 }
