@@ -106,6 +106,14 @@
             android:textAllCaps="false"
             android:text="Remove emoji" />
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:onClick="seekbarEvent"
+            android:textAllCaps="false"
+            android:text="自定义seekbar" />
+
     </LinearLayout>
 
 </ScrollView>

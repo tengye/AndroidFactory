@@ -7,13 +7,14 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
+        android:name=".AfApplication"
         android:allowBackup="true"
         android:icon="@drawable/cover"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:name=".AfApplication"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:windowSoftInputMode="stateVisible">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,61 +22,57 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MenuActivity"></activity>
-        <activity android:name="VideoThumbActivity"></activity>
-        <activity android:name=".DrawableTextActivity"></activity>
-        <activity android:name=".DragItemActivity"></activity>
-        <activity android:name=".DownLoadVideoActivity"></activity>
-
-        <activity android:name=".SampleChooserActivity"
+        <activity android:name=".MenuActivity" />
+        <activity android:name=".VideoThumbActivity" />
+        <activity android:name=".DrawableTextActivity" />
+        <activity android:name=".DragItemActivity" />
+        <activity android:name=".DownLoadVideoActivity" />
+        <activity
+            android:name=".SampleChooserActivity"
             android:configChanges="keyboardHidden"
             android:label="@string/app_name">
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.VIEW"/>-->
-                <!--<category android:name="android.intent.category.DEFAULT"/>-->
-                <!--<category android:name="android.intent.category.BROWSABLE"/>-->
-                <!--<data android:scheme="http"/>-->
-                <!--<data android:scheme="https"/>-->
-                <!--<data android:scheme="content"/>-->
-                <!--<data android:scheme="asset"/>-->
-                <!--<data android:scheme="file"/>-->
-                <!--<data android:host="*"/>-->
-                <!--<data android:pathPattern=".*\\.exolist\\.json"/>-->
-            <!--</intent-filter>-->
-        </activity>
 
-        <activity android:name=".PlayerActivity"
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.VIEW"/> -->
+            <!-- <category android:name="android.intent.category.DEFAULT"/> -->
+            <!-- <category android:name="android.intent.category.BROWSABLE"/> -->
+            <!-- <data android:scheme="http"/> -->
+            <!-- <data android:scheme="https"/> -->
+            <!-- <data android:scheme="content"/> -->
+            <!-- <data android:scheme="asset"/> -->
+            <!-- <data android:scheme="file"/> -->
+            <!-- <data android:host="*"/> -->
+            <!-- <data android:pathPattern=".*\\.exolist\\.json"/> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity
+            android:name=".PlayerActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
-            android:launchMode="singleTop"
-            android:label="@string/app_name">
-            <!--<intent-filter>-->
-                <!--<action android:name="com.google.android.exoplayer.demo.action.VIEW"/>-->
-                <!--<category android:name="android.intent.category.DEFAULT"/>-->
-                <!--<data android:scheme="http"/>-->
-                <!--<data android:scheme="https"/>-->
-                <!--<data android:scheme="content"/>-->
-                <!--<data android:scheme="asset"/>-->
-                <!--<data android:scheme="file"/>-->
-            <!--</intent-filter>-->
-            <!--<intent-filter>-->
-                <!--<action android:name="com.google.android.exoplayer.demo.action.VIEW_LIST"/>-->
-                <!--<category android:name="android.intent.category.DEFAULT"/>-->
-            <!--</intent-filter>-->
+            android:label="@string/app_name"
+            android:launchMode="singleTop">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="com.google.android.exoplayer.demo.action.VIEW"/> -->
+            <!-- <category android:name="android.intent.category.DEFAULT"/> -->
+            <!-- <data android:scheme="http"/> -->
+            <!-- <data android:scheme="https"/> -->
+            <!-- <data android:scheme="content"/> -->
+            <!-- <data android:scheme="asset"/> -->
+            <!-- <data android:scheme="file"/> -->
+            <!-- </intent-filter> -->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="com.google.android.exoplayer.demo.action.VIEW_LIST"/> -->
+            <!-- <category android:name="android.intent.category.DEFAULT"/> -->
+            <!-- </intent-filter> -->
         </activity>
-
-        <activity android:name=".FadingActionBarActivity"
-            android:theme="@style/AppThemeActionBar.TranslucentActionBar">
-            </activity>
-
-        <activity android:name=".HotFixActivity"/>
-
-        <activity android:name=".RichEditorActivity"/>
-
-        <activity android:name=".BottomNavigationBarActivity"/>
-
-        <activity android:name=".EmojiAvtivity"
-            />
-
+        <activity
+            android:name=".FadingActionBarActivity"
+            android:theme="@style/AppThemeActionBar.TranslucentActionBar"></activity>
+        <activity android:name=".HotFixActivity" />
+        <activity android:name=".RichEditorActivity" />
+        <activity android:name=".BottomNavigationBarActivity" />
+        <activity android:name=".EmojiAvtivity" />
+        <activity android:name=".SeekActivity"></activity>
     </application>
 
 </manifest>

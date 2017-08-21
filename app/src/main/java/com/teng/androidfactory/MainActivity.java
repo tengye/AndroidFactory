@@ -88,4 +88,9 @@ public class MainActivity extends AppCompatActivity {
     public void removeEmojiEvent(View view){
         startActivity(new Intent(getContext() , EmojiAvtivity.class));
     }
+
+    public void seekbarEvent(View view){
+        startActivity(new Intent(getContext() , SeekActivity.class));
+    }
+
 }

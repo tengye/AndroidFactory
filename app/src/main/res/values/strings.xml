@@ -12,9 +12,6 @@
     <string name="action_settings">Settings</string>
 
 
-
-
-
     <!--    ExoPlayer      -->
     <string name="enable_background_audio">Play in background</string>
     <string name="video">Video</string>
