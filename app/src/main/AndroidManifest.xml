@@ -73,6 +73,9 @@
 
         <activity android:name=".BottomNavigationBarActivity"/>
 
+        <activity android:name=".EmojiAvtivity"
+            />
+
     </application>
 
 </manifest>

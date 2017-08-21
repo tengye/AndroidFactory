@@ -3,7 +3,6 @@ package com.teng.androidfactory;
 import android.app.Application;
 import android.content.Context;
 
-import com.github.mmin18.layoutcast.LayoutCast;
 import com.teng.androidfactory.common.dragger.AfComponent;
 
 /**
@@ -20,11 +19,11 @@ public class AfApplication extends Application {
         mContext = this;
         mComponent = AfComponent.AfComponentInitialize.init();
 
-        if(BuildConfig.DEBUG){
-            if (BuildConfig.DEBUG) {
-                LayoutCast.init(this);
-            }
-        }
+//        if(BuildConfig.DEBUG){
+//            if (BuildConfig.DEBUG) {
+//                LayoutCast.init(this);
+//            }
+//        }
 
     }
 

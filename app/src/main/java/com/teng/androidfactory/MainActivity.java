@@ -1,18 +1,34 @@
 package com.teng.androidfactory;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+
 public class MainActivity extends AppCompatActivity {
+    @TargetApi(21)
+    @Override
+    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
+        super.onSaveInstanceState(outState, outPersistentState);
+        // 在Activity被强制销毁之前保存数据
+        // 这个方法是安卓5.0（21）之后的，之前的版本请使用onSaveInstanceState(Bundle outState)
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        // 获取Activity被强制销毁后保存的数据
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
     }
 
@@ -63,5 +79,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void bottomNavigationBarEvent(View view) {
         startActivity(new Intent(getContext() , BottomNavigationBarActivity.class));
+    }
+
+//    public void materialDesignEvent(View view) {
+//        startActivity(new Intent(getContext() , MaterialDesignActivity.class));
+//    }
+
+    public void removeEmojiEvent(View view){
+        startActivity(new Intent(getContext() , EmojiAvtivity.class));
     }
 }

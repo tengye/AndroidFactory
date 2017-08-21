@@ -4,6 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
 import android.media.MediaMetadataRetriever;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.Nullable;
@@ -14,12 +15,14 @@ import android.widget.ProgressBar;
 import android.widget.SeekBar;
 import android.widget.VideoView;
 
+import java.io.File;
 import java.util.HashMap;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
+import wseemann.media.FFmpegMediaMetadataRetriever;
 
 /**
  * Created by teng on 16/9/7.
@@ -54,7 +57,7 @@ public class VideoThumbActivity extends FragmentActivity {
 
         metadataRetriever = new MediaMetadataRetriever();
 
-        isNetVideo = true;
+        isNetVideo = false;
 
         initData();
 
@@ -66,13 +69,19 @@ public class VideoThumbActivity extends FragmentActivity {
         thumbImage.setImageResource(R.mipmap.ic_launcher);
 
         if (isNetVideo) {
-            uriString = "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4";
+            uriString = Uri.parse("http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4").toString();
+            metadataRetriever.setDataSource(uriString, new HashMap<String, String>());
         } else {
-            uriString = Environment.getExternalStorageDirectory().getAbsolutePath() + "/V60907-111428.mp4";
+            File f = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/esShare/1502415687348.mp4"); // new 1502415687348  old 1502418514733
+            if (f.exists()){
+                uriString = f.getAbsolutePath();//Environment.getExternalStorageDirectory().getAbsolutePath() + "/V60907-111428.mp4";
+                metadataRetriever.setDataSource(uriString);
+            }
         }
+        ///storage/emulated/0/Chaji/Video/1502350053625.mp4
 
         videoView.stopPlayback();
-        metadataRetriever.setDataSource(uriString, new HashMap<String, String>());
+//        metadataRetriever.setDataSource(uriString, new HashMap<String, String>());
         String time = metadataRetriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION);
         videoView.setVideoPath(uriString);
         videoView.start();
@@ -109,8 +118,13 @@ public class VideoThumbActivity extends FragmentActivity {
 
         @Override
         public void onStopTrackingTouch(SeekBar seekBar) {
-            Bitmap bitmap = metadataRetriever.getFrameAtTime(seekBar.getProgress(),
-                    MediaMetadataRetriever.OPTION_CLOSEST_SYNC);
+            FFmpegMediaMetadataRetriever mmr = new FFmpegMediaMetadataRetriever();
+            mmr.setDataSource(uriString);
+            mmr.extractMetadata(FFmpegMediaMetadataRetriever.METADATA_KEY_ALBUM);
+            mmr.extractMetadata(FFmpegMediaMetadataRetriever.METADATA_KEY_ARTIST);
+            Bitmap bitmap = mmr.getFrameAtTime(seekBar.getProgress(), FFmpegMediaMetadataRetriever.OPTION_CLOSEST); // frame at 2 seconds
+//            byte [] artwork = mmr.getEmbeddedPicture();
+
             thumbImage.setImageBitmap(bitmap);
 
             BitmapDrawable drawable = new BitmapDrawable(bitmap);
@@ -118,6 +132,11 @@ public class VideoThumbActivity extends FragmentActivity {
             drawable.setBounds(bounds);
             seekBar.setThumb(drawable);
             progressBar.setVisibility(View.GONE);
+
+            mmr.release();
+//            Bitmap bitmap = metadataRetriever.getFrameAtTime(seekBar.getProgress(),
+//                    MediaMetadataRetriever.OPTION_CLOSEST_SYNC);
+
         }
     }
 

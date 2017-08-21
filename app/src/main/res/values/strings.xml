@@ -43,7 +43,6 @@
     <string name="sample_list_load_error">One or more sample lists failed to load</string>
 
     <!--bottom NavigationBar-->
-
     <string name="home">Home</string>
     <string name="info">Info</string>
     <string name="mine">Mine</string>
@@ -58,5 +57,24 @@
     <string name="auto_hide_badge">Auto hide badge</string>
     <string name="toggle_hide">Toggle Hide</string>
     <string name="toggle_badge">Toggle Badge</string>
+
+    <!--cliping-->
+    <string-array name="sample_texts">
+        <item>Lorem ipsum dolor sit amet, duo numquam nominavi consectetuer at.</item>
+        <item>Vivendo philosophia mea et. Duo te idque appetere.</item>
+        <item>De finibus bonorum et malorum.</item>
+    </string-array>
+
+    <string name="clip_button">Enabled outline clipping</string>
+    <string name="unclip_button">Disable outline clipping</string>
+
+
+    <!-- materinal animation -->
+    <string name="square_red_name">square_red</string>
+    <string name="square_blue_name">square_blue</string>
+    <string name="square_green_name">square_green</string>
+    <string name="transition_reveal1">transition_reveal1</string>
+
+    <string name="sample_blue_title">sample_blue_title</string>
 
 </resources>
