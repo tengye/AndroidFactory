@@ -3,9 +3,16 @@ apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'me.tatarka.retrolambda'
 
 android {
+    signingConfigs {
+        production {
+            keyAlias 'androidfactory'
+            keyPassword '123456'
+            storeFile file('/Users/teng/AndroidStudioPj/AndroidFactory/androidFactory.jks')
+            storePassword '123456'
+        }
+    }
     compileSdkVersion 23
     buildToolsVersion '23.0.3'
-
     defaultConfig {
         applicationId "com.teng.androidfactory"
         minSdkVersion 21
@@ -13,54 +20,43 @@ android {
         versionCode 1
         versionName "1.0"
     }
-
     compileOptions {
         targetCompatibility 1.8
         sourceCompatibility 1.8
     }
-
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            debuggable true
         }
     }
-
     dataBinding {
         enabled = true
     }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     //Rx的包
     //Rx的包
     //Retrofit2所需要的包
     //ConverterFactory的Gson依赖包
     //    compile 'com.squareup.retrofit2:retrofit:2.1.0'
-//    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    //    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
     //    compile 'com.google.code.gson:gson:2.6.2'
-
     //dragger2
-    
-
     // 快速运行修改程序
-//    compile 'com.github.mmin18.layoutcast:library:1.+@aar'
-
+    //    compile 'com.github.mmin18.layoutcast:library:1.+@aar'
     // exoPlayer
-    
     // FadingActionBar
-    
     // richEditor
     //compile 'jp.wasabeef:richeditor-android:1.2.1'
-
-    
-    
     //    compile 'com.github.wseemann:FFmpegMediaMetadataRetriever-armeabi:1.0.14'
-//    compile 'com.github.wseemann:FFmpegMediaMetadataRetriever-armeabi-v7a:1.0.14'
-//    compile 'com.github.wseemann:FFmpegMediaMetadataRetriever-x86:1.0.14'
-//    compile 'com.github.wseemann:FFmpegMediaMetadataRetriever-mips:1.0.14'
-//    compile 'com.github.wseemann:FFmpegMediaMetadataRetriever-x86_64:1.0.14'
+    //    compile 'com.github.wseemann:FFmpegMediaMetadataRetriever-armeabi-v7a:1.0.14'
+    //    compile 'com.github.wseemann:FFmpegMediaMetadataRetriever-x86:1.0.14'
+    //    compile 'com.github.wseemann:FFmpegMediaMetadataRetriever-mips:1.0.14'
+    //    compile 'com.github.wseemann:FFmpegMediaMetadataRetriever-x86_64:1.0.14'
     //    compile 'com.github.wseemann:FFmpegMediaMetadataRetriever-arm64-v8a:1.0.14'
     compile 'com.android.support:appcompat-v7:23.0.0'
     compile 'com.android.support:design:23.0.0'
