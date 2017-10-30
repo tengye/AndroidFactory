@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -14,6 +17,8 @@ import com.vdurmont.emoji.EmojiParser;
  */
 
 public class EmojiAvtivity extends Activity {
+
+    public static final String TAG = "EmojiAvtivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +60,25 @@ public class EmojiAvtivity extends Activity {
                 }
             }
         });
+
+        View fragmentLayout = findViewById(R.id.fragment_layout);
+
+
+        fragmentLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG , "fragmentLayout ----> click");
+            }
+        });
+
+        Button button = (Button) findViewById(R.id.button);
+
+//        button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Log.d(TAG , "button ----> click");
+//            }
+//        });
 
 
     }

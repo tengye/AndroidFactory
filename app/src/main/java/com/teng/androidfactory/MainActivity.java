@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void hotFixEvent(View view) {
-        startActivity(new Intent(getContext() , HotFixActivity.class));
+        startActivity(new Intent(getContext() , ImagePlayerActivity.class));
     }
 
     public void richEditorEvent(View view) {
@@ -91,6 +91,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void seekbarEvent(View view){
         startActivity(new Intent(getContext() , SeekActivity.class));
+    }
+
+    public void gifEvent(View view){
+        startActivity(new Intent(getContext() , GifActivity.class));
     }
 
 }

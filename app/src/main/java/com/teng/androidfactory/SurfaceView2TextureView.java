@@ -12,9 +12,6 @@ import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * Created by lang on 09/25/2016.
- */
 
 public class SurfaceView2TextureView extends SurfaceView implements TextureView.SurfaceTextureListener{
 

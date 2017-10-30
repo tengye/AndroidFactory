@@ -72,7 +72,7 @@
             android:layout_marginTop="5dp"
             android:onClick="hotFixEvent"
             android:textAllCaps="false"
-            android:text="热修复" />
+            android:text="viewPager循环播放图片" />
 
         <Button
             android:layout_width="match_parent"
@@ -113,6 +113,14 @@
             android:onClick="seekbarEvent"
             android:textAllCaps="false"
             android:text="自定义seekbar" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:onClick="gifEvent"
+            android:textAllCaps="false"
+            android:text="合成Gif" />
 
     </LinearLayout>
 

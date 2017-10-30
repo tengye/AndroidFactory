@@ -13,9 +13,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".MainActivity"
-            android:windowSoftInputMode="stateVisible">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -67,12 +65,14 @@
         </activity>
         <activity
             android:name=".FadingActionBarActivity"
-            android:theme="@style/AppThemeActionBar.TranslucentActionBar"></activity>
+            android:theme="@style/AppThemeActionBar.TranslucentActionBar" />
         <activity android:name=".HotFixActivity" />
         <activity android:name=".RichEditorActivity" />
         <activity android:name=".BottomNavigationBarActivity" />
         <activity android:name=".EmojiAvtivity" />
-        <activity android:name=".SeekActivity"></activity>
+        <activity android:name=".SeekActivity" />
+        <activity android:name=".GifActivity"></activity>
+        <activity android:name=".ImagePlayerActivity"></activity>
     </application>
 
 </manifest>
