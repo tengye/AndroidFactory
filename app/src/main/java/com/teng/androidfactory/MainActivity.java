@@ -30,9 +30,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         ((Button)findViewById(R.id.jniTest)).setText(new JniTest().getJniString());
-
     }
 
     private Context getContext(){
@@ -93,11 +91,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void seekbarEvent(View view){
-        startActivity(new Intent(getContext() , SeekActivity.class));
+        startActivity(new Intent(getContext() , HotFixActivity.class));
     }
 
     public void gifEvent(View view){
         startActivity(new Intent(getContext() , GifActivity.class));
+    }
+
+    public void aidlEvent(View view){
+        startActivity(new Intent(getContext() , AidlTestActivity.class));
     }
 
 }

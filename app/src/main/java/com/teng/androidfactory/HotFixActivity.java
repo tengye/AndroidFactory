@@ -2,6 +2,7 @@ package com.teng.androidfactory;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.BitmapShader;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -10,9 +11,12 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.OvalShape;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
+import android.widget.ImageView;
+
+import jp.co.cyberagent.android.gpuimage.GPUImage;
+import jp.co.cyberagent.android.gpuimage.GPUImageGammaFilter;
 
 /**
  * Created by teng on 10/21/16.
@@ -34,11 +38,29 @@ import android.view.View;
 public class HotFixActivity extends FragmentActivity {
     BitmapShaders bitmapShader = null;
     @Override
-    public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-        bitmapShader = new BitmapShaders(this);
-        setContentView(bitmapShader);
+
+        GPUImage gpuImage = new GPUImage(this);
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.txt_color);
+        gpuImage.setImage(bitmap);
+        gpuImage.setFilter(new GPUImageGammaFilter(0.1f));
+        Bitmap bitmapWithFilterApplied = gpuImage.getBitmapWithFilterApplied();
+
+//        GPUImageView mImageView = (GPUImageView)findViewById(R.id.image);
+//        mImageView.setBackgroundResource(R.drawable.txt_color);
+//        mImageView.setFilter(new GPUImageSepiaFilter()); // sepia
+//        mImageView.setFilter(new GPUImageGrayscaleFilter()); // gray
+//        mImageView.setFilter(new GPUImageSharpenFilter()); // sharp
+//        mImageView.setFilter(new GPUImageSobelEdgeDetection()); // edge
+
+//        bitmapShader = new BitmapShaders(this);
+//        setContentView(bitmapShader);
+        ImageView imageView = new ImageView(this);
+        imageView.setImageBitmap(bitmapWithFilterApplied);
+        setContentView(imageView);
+
     }
 
 
