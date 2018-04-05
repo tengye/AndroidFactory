@@ -54,4 +54,10 @@ public class AidlTestActivity extends FragmentActivity {
             iBook = null;
         }
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unbindService(bookConnection);
+    }
 }

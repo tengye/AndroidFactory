@@ -25,6 +25,14 @@ public class AidlService extends Service {
 
     @Override
     public IBinder onBind(Intent intent) {
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+            }
+        }).start();
+
         return mStub;
     }
 }

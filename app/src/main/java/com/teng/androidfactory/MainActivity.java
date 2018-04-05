@@ -1,6 +1,8 @@
 package com.teng.androidfactory;
 
 import android.annotation.TargetApi;
+import android.app.Activity;
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +10,9 @@ import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
+
+import java.util.Calendar;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -99,7 +104,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void aidlEvent(View view){
-        startActivity(new Intent(getContext() , AidlTestActivity.class));
+//        startActivity(new Intent(getContext() , AidlTestActivity.class));
+        showDatePickerDialog(this, 5, Calendar.getInstance());
+    }
+
+    public static void showDatePickerDialog(Activity activity, int themeResId,  Calendar calendar) {
+        new DatePickerDialog(activity
+                ,  themeResId
+                ,new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year,
+                                  int monthOfYear, int dayOfMonth) {
+
+            }
+        }
+        , calendar.get(Calendar.YEAR)
+        ,calendar.get(Calendar.MONTH)
+        ,calendar.get(Calendar.DAY_OF_MONTH)).show();
     }
 
 }
