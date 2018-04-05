@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title id="title">Nativetojs</title>
+    <script type="text/javascript">
+            function javacalljs(param){
+                 document.getElementById("nativetojs").innerHTML =
+                     "<br\>JAVA调用了JS的函数"+param;
+            }
+        </script>
+</head>
+<body >
+<p>安卓调用js</p>
+<div style="margin-top: 20px;margin-left: 20px">
+    <div id="nativetojs"></div>
+    <input type="button" value="弹个窗口" onclick="window.android.showPopup('当所有的人，离开我的时候')"/>
+</div>
+</body>
+</html>

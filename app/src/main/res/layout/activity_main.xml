@@ -140,6 +140,15 @@
             android:textAllCaps="false"
             android:text="aidl练习" />
 
+        <Button
+            android:id="@+id/hybridTest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:onClick="hybridTestEvent"
+            android:textAllCaps="false"
+            android:text="Hybrid练习" />
+
     </LinearLayout>
 
 </ScrollView>
